@@ -7,3 +7,7 @@ In working with Grails and learning Vaadin, I started to take some of the Vaadin
 
 Since I am not a Vaadin expert, there might well be better ways of handling these items in a Grails application and if so I would love to hear your feedback.
 
+Grails 2.2.0
+Vaadin 7 Beta11 Plugin
+Uses h2 database
+
