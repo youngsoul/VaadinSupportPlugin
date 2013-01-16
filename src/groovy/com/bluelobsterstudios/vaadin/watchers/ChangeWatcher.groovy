@@ -52,6 +52,12 @@ class ChangeWatcher implements PropertyChangeListener {
    */
     Map bindingMap = [:]
 
+    /**
+     * watchers that are triggered when the value being watched is changed
+     * instead of just a particular property.
+     */
+    List valueChangeClosures = []
+
   /**
    * Because the @Bindable is a source level annotation there is no way to
    * know if the item is Bindable.
@@ -117,6 +123,14 @@ class ChangeWatcher implements PropertyChangeListener {
                 applyNewValue(newValue, k)
             }
         }
+        
+ 
+        if( valueChangeClosures ) {
+            valueChangeClosures.each { Closure callBack ->
+                callBack.call(valueToWatch)
+            }
+        }
+
     }
 
   /**
@@ -160,5 +174,15 @@ class ChangeWatcher implements PropertyChangeListener {
         if( !bindingMap[sourcePropName] ) bindingMap[sourcePropName] = []
         bindingMap[sourcePropName] << new Expando(callBack: callBack)
     }
+
+    /**
+     * Create a watch binding that calls a Closure when the valuing being watched
+     * is changed.
+     * @param callBack - Closure to call when the value to watch is changed.
+     */
+    void watchValueChange(Closure callBack ) {
+        if( callBack) valueChangeClosures << callBack
+    }
+
 
 }
