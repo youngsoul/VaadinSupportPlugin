@@ -180,7 +180,7 @@ class ChangeWatcher implements PropertyChangeListener {
      * is changed.
      * @param callBack - Closure to call when the value to watch is changed.
      */
-    void watchValueChange(Closure callBack ) {
+    void watch(Closure callBack ) {
         if( callBack) valueChangeClosures << callBack
     }
 

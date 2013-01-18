@@ -8,6 +8,9 @@ package com.bluelobsterstudios.vaadin.events
  * with the event name.  When dispatching the event, any arbitrary data object can be passed to the
  * Closure listener.
  *
+ * To use in a class, typically a View component you use the @Delegate annotation.  For example
+ * @Delegate EventDispatcher eventDispatcher = new EventDispatcher()
+ *
  * Any number of event listeners can be associated with the event name.
  *
  * Adding Event Listener
