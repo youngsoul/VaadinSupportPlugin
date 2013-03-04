@@ -9,7 +9,7 @@ Since I am not a Vaadin expert, there might well be better ways of handling thes
 
 This plugin assumes your primary application will have the actual Vaadin plugin installed.  All of the support classes can be found in the src/groovy directory struture.
 
-Grails 2.2.0
-Vaadin 7 Beta11 Plugin
+Grails 2.2.1
+Vaadin 1.7.1 Plugin
 Uses h2 database
 
