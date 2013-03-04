@@ -34,7 +34,7 @@ grails.project.dependency.resolution = {
             export = false
         }
 
-      build ":vaadin:1.7.0-beta11"
+      build ":vaadin:1.7.1"
 
     }
 }
